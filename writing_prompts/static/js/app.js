@@ -1,3 +1,7 @@
+$(document).ready(function () {
+
+})
+
 $('#get-prompt').on('click', function () {
     $.get('https://ineedaprompt.com/dictionary/default/prompt?q=adj+noun+adv+verb+noun+location', function (prompt, status) {
         if (status === 'error') {
