@@ -1,5 +1,20 @@
 $(document).ready(function () {
 
+    $('.tabs').tabs();
+
+    // Switch board
+    $("input").change(function () {
+        if ($(this).is(":checked")) {
+            console.log("Is checked");
+            userName = $(this).data("username")
+            document.location.href = document.URL + '/entries';
+            $(this).css(':checked')
+            // window.location = ;
+        }
+        else {
+            console.log("Is Not checked");
+        }
+    })
 })
 
 $('#get-prompt').on('click', function () {

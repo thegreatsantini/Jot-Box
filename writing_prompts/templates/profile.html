@@ -1,24 +1,56 @@
 {% extends 'layout.html' %} {% load staticfiles %} {% block content %}
 <p>{{ user.username }}</p>
-<a id='get-prompt' class="waves-effect waves-light btn">button</a>
-<div id="give-prompt">
-</div>
-<hr>
 <div class="row">
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s6">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Textarea</label>
-            </div>
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s3">
+                <a href="#test1">New Prompt</a>
+            </li>
+            <li class="tab col s3">
+                <a class="active" href="#test2">Entries</a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class="switch">
+    <label>
+        <a href="{% url 'profile' user.username %}">New Prompt</a>
+        <input type="checkbox">
+        <span class="lever"></span>
+        <a href="{% url 'entries' user.username %}">Entries</a>
+    </label>
+</div>
+</div>
+<!-- NEW PROMPT PAGE -->
+<div id="test1">
+    
+    <a id='get-prompt' class="waves-effect waves-light btn">button</a>
+    <div id="give-prompt">
+    </div>
+    <hr>
+    <div class="row">
+        <form class="col s12">
             <div class="row">
                 <div class="input-field col s6">
                     <textarea id="textarea1" class="materialize-textarea"></textarea>
                     <label for="textarea1">Textarea</label>
                 </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Textarea</label>
+                    </div>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
+<!-- ENTRIES PAGE -->
+<div id="test2">
+    <h1>Entries can be found here!!! </h1>
+</div>
+
+
 <!-- https://ineedaprompt.com/dictionary/default/prompt?q=adj+noun+adv+verb+noun+location -->
 {% endblock %}

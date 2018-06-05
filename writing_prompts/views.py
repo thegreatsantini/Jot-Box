@@ -77,3 +77,6 @@ def login_view(request):
     else:
         form = LoginForm()
         return render(request, 'login.html', {'form': form})
+
+def entries_view(request, username):
+    return render(request, 'entries.html')
