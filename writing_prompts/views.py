@@ -38,23 +38,25 @@ def signout_view(request):
 
 def profile_view(request, username):
     user = User.objects.get(username=username)
-    # entries = Entry.objects.filter(user=user)
-    return render(request, 'profile.html', {'user': user})
+    # entries = Entry.objects.filter(author=user)
+    entries = Entry.objects.all()
+    print('%%%%%%%%%%',entries)
+    return render(request, 'profile.html', {'user': user, 'entries':entries})
 
 
 def signup_view(request):
     if request.method == 'POST':
-        form = SignupForm(request.POST)
+        form=SignupForm(request.POST)
         if form.is_valid():
-            u = form.cleaned_data['username']
-            e = form.cleaned_data['email']
-            p = form.cleaned_data['password']
+            u=form.cleaned_data['username']
+            e=form.cleaned_data['email']
+            p=form.cleaned_data['password']
             # user = User.objects.create_user(ln, fn, u, e, p)
-            user = User.objects.create_user(u, e, p)
+            user=User.objects.create_user(u, e, p)
             login(request, user)
             return HttpResponseRedirect('/')
     else:
-        form = SignupForm()
+        form=SignupForm()
         return render(request, 'signup.html', {'form': form})
         # return HttpResponse('signup.html')
 
@@ -62,11 +64,11 @@ def signup_view(request):
 def login_view(request):
     if request.method == 'POST':
         # if post, then authenticate (user submitted username and password)
-        form = LoginForm(request.POST)
+        form=LoginForm(request.POST)
         if form.is_valid():
-            u = form.cleaned_data['username']
-            p = form.cleaned_data['password']
-            user = authenticate(username=u, password=p)
+            u=form.cleaned_data['username']
+            p=form.cleaned_data['password']
+            user=authenticate(username=u, password=p)
             if user is not None:
                 if user.is_active:
                     login(request, user)
@@ -76,7 +78,7 @@ def login_view(request):
             else:
                 print("The username and/or password is incorrect.")
     else:
-        form = LoginForm()
+        form=LoginForm()
         return render(request, 'login.html', {'form': form})
 
 
@@ -85,9 +87,9 @@ def entries_view(request, username):
 
 
 def post_entry(request):
-    form = EntryForm(request.POST)
+    form=EntryForm(request.POST)
     if form.is_valid():
-        cat = form.save(commit=False)
-        cat.user = request.user
+        cat=form.save(commit=False)
+        cat.user=request.user
         cat.save()
     return HttpResponseRedirect('/')
