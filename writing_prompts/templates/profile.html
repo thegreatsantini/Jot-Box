@@ -15,21 +15,27 @@
 </div>
 <div class="switch">
     <label>
-        <a href="{% url 'profile' user.username %}">New Prompt</a>
+        New Prompt
         <input type="checkbox">
         <span class="lever"></span>
-        <a href="{% url 'entries' user.username %}">Entries</a>
+        Entries
     </label>
 </div>
 </div>
 <!-- NEW PROMPT PAGE -->
 <div id="test1">
-    
     <a id='get-prompt' class="waves-effect waves-light btn">button</a>
     <div id="give-prompt">
     </div>
-    <hr>
-    <div class="row">
+    <hr> 
+        
+        
+    <hr/> 
+    <form action="post_entry/" method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" age="Submit" />
+    </form>
+    <!-- <div class="row">
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s6">
@@ -44,7 +50,7 @@
                 </div>
             </div>
         </form>
-    </div>
+    </div> -->
 </div>
 <!-- ENTRIES PAGE -->
 <div id="test2">

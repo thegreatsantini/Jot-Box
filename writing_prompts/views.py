@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import LoginForm, SignupForm
+from .forms import LoginForm, SignupForm, EntryForm
 from django.contrib.auth.models import User
+from .models import Entry
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
@@ -37,7 +38,7 @@ def signout_view(request):
 
 def profile_view(request, username):
     user = User.objects.get(username=username)
-    # cats = Cat.objects.filter(user=user)
+    # entries = Entry.objects.filter(user=user)
     return render(request, 'profile.html', {'user': user})
 
 
@@ -78,5 +79,15 @@ def login_view(request):
         form = LoginForm()
         return render(request, 'login.html', {'form': form})
 
+
 def entries_view(request, username):
     return render(request, 'entries.html')
+
+
+def post_entry(request):
+    form = EntryForm(request.POST)
+    if form.is_valid():
+        cat = form.save(commit=False)
+        cat.user = request.user
+        cat.save()
+    return HttpResponseRedirect('/')
