@@ -1,8 +1,13 @@
 .wrapper {
     display: flex;  
-    flex-flow: row wrap;
+    flex-flow:  nowrap;
+    justify-content: space-between;
     font-weight: bold;
     text-align: center;
+}
+
+.entries-content {
+    height: 100%
 }
 
 .wrapper > * {
@@ -21,7 +26,7 @@
     .main    { order: 2; }
     .aside-2 { order: 3; }
     .footer  { order: 4; }
-}
+} 
 .header {
     background: tomato;
 }
