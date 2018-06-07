@@ -1,19 +1,19 @@
 {% extends 'layout.html' %} {% load staticfiles %} {% block content %}
-<p>{{ user.username }}</p>
 <div class="row">
     <div class="col s12">
         <ul class="tabs">
-            <li class="tab col s3">
-                <a href="#test1">New Prompt</a>
+            <li class="tab col s6">
+                <a class="active" href="#test1">New Prompt</a>
             </li>
-            <li class="tab col s3">
-                <a class="active" href="#test2">Entries</a>
+            <li class="tab col s6">
+                <a href="#test2">Entries</a>
             </li>
 
         </ul>
     </div>
 </div>
-<div class="switch">
+<!-- Switch -->
+<!-- <div class="switch">
     <label>
         New Prompt
         <input type="checkbox">
@@ -21,19 +21,40 @@
         Entries
     </label>
 </div>
-</div>
+</div> -->
 <!-- NEW PROMPT PAGE -->
 <div id="test1">
     <a id='get-prompt' class="waves-effect waves-light btn">button</a>
     <div id="give-prompt">
     </div>
-    <hr> 
-        
-        {{ draft }}
-    <hr/> 
-    <form action="post_entry/" method="post">
-        {% csrf_token %} {{ form.as_p }}
-        <input type="submit" age="Submit" />
+    <hr/>
+    <p class="flow-text">
+        <span id="noun1"></span>
+        <span id="verb1"></span>
+        <span id="verb2"></span>
+        <span id="noun2"></span>
+        <span id="location"></span>
+    </p>
+    <form action="post_entry/" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea name='notes' id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">NOTES</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <textarea name="draft" id="textarea2" class="materialize-textarea"></textarea>
+                        <label for="textarea2">DRAFT</label>
+                    </div>
+                </div>
+                <input name="prompt" placeholder="Placeholder" type="text" hidden value='placeholder'  id="ajax-prompt">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
     </form>
     <!-- <div class="row">
         <form class="col s12">
@@ -54,9 +75,21 @@
 </div>
 <!-- ENTRIES PAGE -->
 <div id="test2">
-    <h1>Entries can be found here!!! </h1>
+    {% for el in entries %}
+    <div class="wrapper">
+        <header class="header">
+            <p>Prompt: {{ el.prompt }} </p>
+            <p>Created: {{ el.pub_date }}</p>
+        </header>
+        <article class="main">
+            <h5 class="nice-border">Draft</h5>
+            {{ el.draft }}
+        </article>
+        <aside class="aside aside-1">
+            <h5 class="nice-border">Notes</h5>
+            <p>{{ el.notes }}</p>
+        </aside>
+    </div>
+    {% endfor %}
 </div>
-
-
-<!-- https://ineedaprompt.com/dictionary/default/prompt?q=adj+noun+adv+verb+noun+location -->
 {% endblock %}

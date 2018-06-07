@@ -12,7 +12,7 @@ class SignupForm(forms.Form):
     email = forms.CharField(label='Email', max_length=64, widget=forms.EmailInput())
     password = forms.CharField(widget=forms.PasswordInput())
 
-class EntryForm(forms.ModelForm):
-    class Meta:
-        model = Entry
-        fields = ['prompt', 'notes', 'draft']
+class EntryForm(forms.Form):
+    notes = forms.CharField(widget=forms.Textarea)
+    draft = forms.CharField(widget=forms.Textarea)
+
