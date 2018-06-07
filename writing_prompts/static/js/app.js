@@ -1,6 +1,8 @@
 $(document).ready(function () {
-
+    // $('input#input_text, textarea#textarea2').characterCounter();
+    M.updateTextFields();
     $('.tabs').tabs();
+    $('.sidenav').sidenav();
 
     // Switch board
     $("input").change(function () {

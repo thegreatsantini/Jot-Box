@@ -7,27 +7,6 @@ from django.contrib.auth import authenticate, login, logout
 import datetime
 now = datetime.datetime.now()
 
-# Create your views here.
-# def index(request):
-#     if request.method == 'POST':
-#         # if post, then authenticate (user submitted username and password)
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             u = form.cleaned_data['username']
-#             p = form.cleaned_data['password']
-#             user = authenticate(username=u, password=p)
-#             if user is not None:
-#                 if user. is_active:
-#                     login(request, user)
-#                     return HttpResponseRedirect('/')
-#                 else:
-#                     print("The account has been disabled.")
-#             else:
-#                 print("The username and/or password is incorrect.")
-#     else:
-#         form = LoginForm()
-#         return render(request, 'login.html', {'form': form})
-
 
 def index(request):
     return render(request, 'index.html')
@@ -58,7 +37,6 @@ def signup_view(request):
     else:
         form = SignupForm()
         return render(request, 'signup.html', {'form': form})
-        # return HttpResponse('signup.html')
 
 
 def login_view(request):
@@ -86,14 +64,6 @@ def entries_view(request, username):
     return render(request, 'entries.html')
 
 
-# def post_entry(request):
-#     form=EntryForm(request.POST)
-#     if form.is_valid():
-#         new_entry = form.save(commit=False)
-#         new_entry.user=request.user
-#         new_entry.save()
-#     return HttpResponseRedirect('/')
-
 def post_entry(request):
     draft = request.POST['draft']
     notes = request.POST['notes']
@@ -103,3 +73,10 @@ def post_entry(request):
     new_entry = Entry.objects.create(draft=draft, notes=notes, prompt=prompt, pub_date=pub_date, author=author)
     print(new_entry)
     return HttpResponseRedirect('/')
+
+
+def delete_entry(request, entry_id):
+    entry_to_delete = Entry.objects.filter(id=entry_id).delete()
+    print('*******************', entry_to_delete)
+    return HttpResponseRedirect('/')
+
