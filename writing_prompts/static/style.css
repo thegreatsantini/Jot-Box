@@ -4,12 +4,22 @@ body {
     /* font-family: 'Do Hyeon', sans-serif; */
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+}
+
+.navbar-fixed {
+    font-family: 'Lobster', cursive;
 }
 
 .copyright > i {
-    padding: 4em;
-    font-size: 2em;
-    opacity: 1; 
+    /* padding: 4em; */
+    font-size: 2em; 
+}
+
+.copyright {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
 }
 
 
@@ -42,17 +52,21 @@ opacity: 0.5;
 /* border: 2px solid pink; */
 }
 
-.row .col .m6 {
-    /* opacity: 0.5; */
+/* .row .col .m6 {
+    opacity: 0.5;
     border: 2px solid pink;
     background-color: grey;
     width: 100%;
-}
+} */
 nav {
-    background-color: #e69c47
+    background-color: #084887
 }
 
 /* /////////// START INDEX.HTML //////////// */
+
+/* .row .col {
+    
+} */
 
 .homepage-parent {
     height: 700px;
@@ -63,12 +77,24 @@ nav {
 
 
 .homepage-header {
-    height: 100px;
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 0.75rem;
+    min-height: 1px;
     text-align: center;
+    vertical-align: middle;
+    line-height: 90px; 
+    border-radius: 20px;
+    text-align: center!important;
     line-height: 90px;
     background-color: grey;
     z-index: 100;
     position: relative;
+    -webkit-box-shadow: 0px 7px 52px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 7px 52px -4px rgba(0,0,0,1);
+    box-shadow: 0px 7px 52px -4px rgba(0,0,0,1);
+    font-family: 'Oswald', sans-serif;
 }
 
 .homepage-image-container {
@@ -85,7 +111,7 @@ nav {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #333333;
+    background-color: #084887;
     /* opacity: 0.5; */
     color: white;
     text-align: center;
@@ -100,6 +126,16 @@ nav {
 #get-prompt {
     display: flex; 
     align-items: center; 
+}
+
+#test1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+#test2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
 }
 
 .profile-tabs {

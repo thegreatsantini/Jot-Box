@@ -59,7 +59,7 @@
 <!-- ENTRIES PAGE -->
 <div id="test2">
     {% for el in entries %}
-    <div class="wrapper">
+    <div class="container wrapper">
         <header class="header">
             <p>Prompt: {{ el.prompt }} </p>
             <p>Created: {{ el.pub_date }}</p>
@@ -75,6 +75,9 @@
             <p class="">{{ el.notes }}</p>
         </aside>
     </div>
+    <br/>
+    <br>
+
     {% endfor %}
 </div>
 {% endblock %}
