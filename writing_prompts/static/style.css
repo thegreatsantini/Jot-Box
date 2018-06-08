@@ -123,9 +123,9 @@ nav {
 
 
 /* //////////// PRofile.html ////////////////*/
-#get-prompt {
-    display: flex; 
+#get-prompt { 
     align-items: center; 
+    margin: 0 auto;
 }
 
 #test1 {
