@@ -1,13 +1,166 @@
-.wrapper {
-    display: flex;  
-    flex-flow:  nowrap;
-    justify-content: space-between;
-    font-weight: bold;
+body {
+    background-image: url('https://images.summitmedia-digital.com/preview/images/2016/08/02/MINIMALISTnm.jpg');
+    background-size: cover;
+    /* font-family: 'Do Hyeon', sans-serif; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+}
+
+.navbar-fixed {
+    font-family: 'Lobster', cursive;
+}
+
+.copyright > i {
+    /* padding: 4em; */
+    font-size: 2em; 
+}
+
+.copyright {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+
+
+
+h4 .right-half {
+    color: black;
+    top: 100px;
+}
+.left-half {
+    text-align: right;
+    margin-bottom: 100px;
+}
+.right-half {
+    text-align: left;
+    margin-bottom: 500px;
+    background-color: grey;
+    color: blue;
+}
+.homepage-div{
+    /* background-color: grey; */
+    /* background-image: url("https://images.summitmedia-digital.com/preview/images/2016/08/02/MINIMALISTnm.jpg"); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    height: 100%;
+
+}
+
+.col .s12 .m6 .right-div {
+opacity: 0.5;
+/* border: 2px solid pink; */
+}
+
+/* .row .col .m6 {
+    opacity: 0.5;
+    border: 2px solid pink;
+    background-color: grey;
+    width: 100%;
+} */
+nav {
+    background-color: #084887
+}
+
+/* /////////// START INDEX.HTML //////////// */
+
+/* .row .col {
+    
+} */
+
+.homepage-parent {
+    height: 700px;
+    width: 100%;
+    position: absolute;
+}
+
+
+
+.homepage-header {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 0.75rem;
+    min-height: 1px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px; 
+    border-radius: 20px;
+    text-align: center!important;
+    line-height: 90px;
+    background-color: grey;
+    z-index: 100;
+    position: relative;
+    -webkit-box-shadow: 0px 7px 52px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 7px 52px -4px rgba(0,0,0,1);
+    box-shadow: 0px 7px 52px -4px rgba(0,0,0,1);
+    font-family: 'Oswald', sans-serif;
+}
+
+.homepage-image-container {
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #084887;
+    /* opacity: 0.5; */
+    color: white;
     text-align: center;
 }
 
-.entries-content {
-    height: 100%
+/* /////////// END INDEX.HTML //////////// */
+
+
+
+
+/* //////////// PRofile.html ////////////////*/
+#get-prompt { 
+    align-items: center; 
+    margin: 0 auto;
+}
+
+#test1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+#test2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+.profile-tabs {
+    background-color: white;
+}
+
+.prompt {
+    background-color: #333333;
+    border: 2px solid steelblue;
+    padding: 10px;
+    border-radius: 50px 20px;
+    padding: 5%;
+    /* opacity: 0.5; */
+}
+
+span {
+    opacity: 1;
+    color: azure;
+}
+
+.wrapper {
+    display: flex;  
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
 }
 
 .wrapper > * {
@@ -15,6 +168,18 @@
     flex: 1 100%;
 }
 
+.header {
+    background: tomato;
+}
+
+.main {
+    text-align: left;
+    background: deepskyblue;
+}
+
+.aside-2 {
+    background: hotpink;
+}
 
 @media all and (min-width: 600px) {
     .aside { flex: 1 auto; }
@@ -26,30 +191,6 @@
     .main    { order: 2; }
     .aside-2 { order: 3; }
     .footer  { order: 4; }
-} 
-.header {
-    background: tomato;
-}
-
-.footer {
-    background: lightgreen;
-}
-
-.main {
-    text-align: left;
-    background: deepskyblue;
-}
-
-.aside-1 {
-    background: gold;
-}
-
-.aside-2 {
-    background: hotpink;
-}
-
-h3 {
-    text-decoration: underline;
 }
 
 hr.style-eight {

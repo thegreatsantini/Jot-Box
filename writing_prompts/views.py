@@ -76,7 +76,6 @@ def post_entry(request):
 
 
 def delete_entry(request, entry_id):
-    entry_to_delete = Entry.objects.filter(id=entry_id).delete()
-    print('*******************', entry_to_delete)
+    Entry.objects.filter(id=entry_id).delete()
     return HttpResponseRedirect('/')
 

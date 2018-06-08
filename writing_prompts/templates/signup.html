@@ -1,12 +1,10 @@
 {% extends 'layout.html' %} {% block content %}
 
 <h1 class="pageHead">SIGNUP</h1>
-
+<div class="container">
 <form class="loginForm" method="POST" action=".">
-	{% csrf_token %}
-	{{ form.as_p }}
-
-	<input type="submit" value="Signup" />
-</form>
-
+		{% csrf_token %} {{ form.as_p }}
+		<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+	</form>
+</div>
 {% endblock %}
