@@ -63,7 +63,7 @@
         <header class="header">
             <p>Prompt: {{ el.prompt }} </p>
             <p>Created: {{ el.pub_date }}</p>
-            <a href="/profile/delete/{{ el.id }}">X</a>
+            <a href="/profile/delete/{{ el.id }}" class="waves-effect waves-teal btn-flat">remove</a>
         </header>
         <article class="main">
             <h5 class="nice-border">Draft</h5>
@@ -76,8 +76,6 @@
         </aside>
     </div>
     <br/>
-    <br>
-
-    {% endfor %}
+    <br> {% endfor %}
 </div>
 {% endblock %}
