@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import dj_database_url
 import environ
 env = environ.Env(DEBUG=(bool, False),) # set default values and casting
 environ.Env.read_env('.env') # reading .env file
@@ -28,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY') # Raises ImproperlyConfigured exception if SECRET
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['catcollector.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -77,13 +78,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': ('leapfrog')
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': ('leapfrog')
+#     }
+# }
 
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(
+    default='ostgres://uolplepyymvdqg:6d6cb4e0f377c1410d72194dc9d2e1cd29e6d4fd139dd371e5211c9869b4521f@ec2-54-204-18-53.compute-1.amazonaws.com:5432/d965n9h9j4bf06'
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
