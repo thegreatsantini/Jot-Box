@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY') # Raises ImproperlyConfigured exception if SECRET
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['catcollector.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['jotbox.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(
-    default='ostgres://uolplepyymvdqg:6d6cb4e0f377c1410d72194dc9d2e1cd29e6d4fd139dd371e5211c9869b4521f@ec2-54-204-18-53.compute-1.amazonaws.com:5432/d965n9h9j4bf06'
+    default='postgres://uolplepyymvdqg:6d6cb4e0f377c1410d72194dc9d2e1cd29e6d4fd139dd371e5211c9869b4521f@ec2-54-204-18-53.compute-1.amazonaws.com:5432/d965n9h9j4bf06'
 )
 
 # Password validation
