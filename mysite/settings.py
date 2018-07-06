@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY') # Raises ImproperlyConfigured exception if SECRET
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jotbox.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['jotbox.herokuapp.com', 'localhost', '127.0.']
 
 
 # Application definition

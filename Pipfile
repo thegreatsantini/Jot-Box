@@ -8,6 +8,8 @@ gunicorn = '*'
 django-heroku = '*'
 django-cors-headers = '*'
 dj-database-url = '*'
+requests = "*"
+django-environ = "*"
 
 [requires]
 python_version = '3.6.5'
