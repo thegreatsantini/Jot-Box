@@ -10,6 +10,7 @@ django-cors-headers = '*'
 dj-database-url = '*'
 requests = "*"
 django-environ = "*"
+"psycorgp2-binary" = "*"
 
 [requires]
 python_version = '3.6.5'
