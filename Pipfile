@@ -11,6 +11,7 @@ dj-database-url = '*'
 requests = "*"
 django-environ = "*"
 "psycorgp2-binary" = "*"
+whitenoise = "*"
 
 [requires]
 python_version = '3.6.5'
