@@ -25,6 +25,7 @@ def profile_view(request, username):
 
 
 def signup_view(request):
+    print(request.POST)
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
@@ -65,6 +66,7 @@ def entries_view(request, username):
 
 
 def post_entry(request):
+    print(request.POST)
     draft = request.POST['draft']
     notes = request.POST['notes']
     prompt = request.POST['prompt']
